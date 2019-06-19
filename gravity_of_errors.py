@@ -10,6 +10,12 @@ Created on Mon Jun 17 18:28:40 2019
 @author: aanderson
 """
 
+def drag(A, v):
+    """Air drag on object
+        A = cross-sectional area
+        v = velocity as tuple (vx,vy)"""
+        dv = -A * v
+
 def xy(t, xy0, v0):
     """This function calculates the trajectory of an object
     under the influence of Earth's gravity near its surface:
@@ -41,7 +47,6 @@ finally:
         trajectory = [(t/2.,) + xy(t/2., xy0, v0) for t in range(8)]
     except:
         print("data has problems: " + str(xy0))
-
 
 
 print(trajectory)
